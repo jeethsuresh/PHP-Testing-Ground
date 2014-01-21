@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<script>
+	function callPHP() {
+    var httpc = new XMLHttpRequest(); // simplified for clarity
+    var done=false;
+    httpc.onreadystatechange = function(){
+    	if(httpc.readyState == 4 && httpc.status == 200){
+    		document.getElementById("Title").innerHTML = httpc.responseText;
+    		alert("recieve");
+    		done = true;
+    		httpc.abort();
+    		}
+    	}
+    httpc.open("GET", "get_data.php?q="+"asdf", true); // sending as POST
+    httpc.send();
+    }
+</script>
+
+<form name="search" onsubmit="return callPHP()">
+<input type="submit" />
+</form>
+
+<p id="Title"> </p>
+
+</body>
+</html>
