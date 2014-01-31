@@ -12,8 +12,7 @@
 	
 
 	$data = mysql_fetch_assoc($result);
-	echo $q;
-	//echo "$data[Title]";
+	echo "{$data[Title]}";
 	
 	
 ?>

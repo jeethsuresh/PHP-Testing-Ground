@@ -1,6 +1,6 @@
 <html>
-<body>
-
+<body onload="play()">
+<!--
 <script>
 	function callPHP() {
     var httpc = new XMLHttpRequest(); // simplified for clarity
@@ -23,6 +23,13 @@
 </form>
 
 <p id="Title"> </p>
+-->
 
+<script>
+	function play(){
+		window.location.assign("http://thatkidfrommars.x10.mx/php/outputwithphp.php?q="+prompt("Enter ID"));
+	}
+
+		
 </body>
 </html>
