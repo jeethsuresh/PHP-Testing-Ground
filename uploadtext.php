@@ -27,10 +27,13 @@ for($i = 0; $i < count($_FILES['img']['name']); $i++){
 $titlesubmit = str_replace("'", "''", $_POST[title]);
 $tagsubmit = str_replace("'", "''", $_POST[tags]);
 $articleid = uniqid() . substr(md5(rand()), 0, 5);
+$author = str_replace("'", "''", $_POST[author]);
+$issue = str_replace("'", "''", $_POST[issue]);
+$embed = str_replace("'", "''", $_POST[embed]);
 
 
-mysql_query("INSERT INTO titles (Title, Article, Images, ID, Tags)
-	VALUES ('$titlesubmit', '$articlesubmit', '$finalimagelist', '$articleid', '$tagsubmit')") or die (mysql_error());
+mysql_query("INSERT INTO titles (Title, Images, Article, ID, Tags, MediaEmbedCode, Author, Issue)
+	VALUES ('$titlesubmit', '$finalimagelist', '$articlesubmit', '$articleid', '$tagsubmit', '$embed', '$author', '$issue')") or die (mysql_error());
 
 echo "Finished";
 
