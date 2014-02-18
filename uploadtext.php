@@ -30,10 +30,12 @@ $articleid = uniqid() . substr(md5(rand()), 0, 5);
 $author = str_replace("'", "''", $_POST[author]);
 $issue = str_replace("'", "''", $_POST[issue]);
 $embed = str_replace("'", "''", $_POST[embed]);
+$issueorg = str_replace("'", "''", $_POST[articletype]);
+$blurb = str_replace("'", "''", $_POST[blurb]);
 
 
-mysql_query("INSERT INTO titles (Title, Images, Article, ID, Tags, MediaEmbedCode, Author, Issue)
-	VALUES ('$titlesubmit', '$finalimagelist', '$articlesubmit', '$articleid', '$tagsubmit', '$embed', '$author', '$issue')") or die (mysql_error());
+mysql_query("INSERT INTO titles (Title, Images, Article, ID, Tags, MediaEmbedCode, Author, Issue, IssueOrganization, Blurb)
+	VALUES ('$titlesubmit', '$finalimagelist', '$articlesubmit', '$articleid', '$tagsubmit', '$embed', '$author', '$issue', '$issueorg', '$blurb')") or die (mysql_error());
 
 echo "Finished";
 

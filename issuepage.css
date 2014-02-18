@@ -10,16 +10,9 @@ body{
 	margin: 2px;
 	padding: 1px;
 	}
-article{
-	margin: 50px;
-	padding: 25px;
-	margin-bottom: 20px;
-	}
 h1{
 	text-align: center;
-	}
-embed{
-	position: center;
+	color: green;
 	}
 #menu{
 	background-color: #000000;
@@ -46,3 +39,35 @@ li
 #menu a:hover{color: #DEDEDE;}
 
 .center{text-align: center;}
+
+.container{
+	display: inline;
+	width: 900px;
+}	
+
+.spotlight{
+	width: 900px;
+	height: 750px;
+}
+img.spotlight{
+	width: 900px;
+	height: 550px;	
+	display: block;
+	margin: 0 auto;
+}
+
+.feature{
+	width: 400px;
+	height: 400px;	
+}
+img.feature{
+	width: 100px;
+	height: 400px;
+	display: inline;
+}
+
+.single{
+	width: 300px;
+	height: 400px;
+	display: inline;
+}
