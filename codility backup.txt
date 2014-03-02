@@ -1,0 +1,122 @@
+Problem 1: 
+// you can also use imports, for example:
+// import java.math.*;
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 7
+        int solution[] = new int[A.length];
+    //Start at a new index each time, and start adding numbers consecutively until the solution array contains all the possibilities
+        for(int i = 0; i < A.length; i++){//For each element of array,
+            solution[i] = A[i];         //Initialize the solution array element to the original array's element
+            for(int j = 1; j < solution.length; j++){//For each element of the array,
+                if((i+j) >= A.length){//Chek for an ArrayOutOfBounds Exception
+                    solution[i] = solution[i]+A[(i+j-A.length)];//Solve it by subtracting the length of the array from the addition of the two indexes
+                }
+                else{//If ArrayOutOfBoundsException will not occur,
+                    solution[i] = solution[i]+A[(i+j)];//Just add the array values.
+                }
+                solution[i] = solution[i]*2;//Multiply the solution by two to simulate adding it to the next operation 
+            }
+            solution[i] = solution[i]/2;//Divide by two at the end because there's an extraneous multiplication for the last operation
+        }
+        int smallest = solution[0];//Make the first array element the smallest element
+        for(int i = 0; i < solution.length; i++){//Check every array element until you find one smaller, then replace it. 
+            if(solution[i] < smallest){
+                smallest = solution[i];
+            }
+        }
+        return smallest;//Return the smallest element of solution[]
+    }
+}
+
+Problem 2:
+// you can also use imports, for example:
+// import java.math.*;
+class Solution {
+    
+        int value = 0;
+    public int solution(Tree T) {
+        // write your code in Java SE 7
+        value = T.x;
+        return solutionworker(T);
+    }
+    
+    public int solutionworker(Tree T){
+        if(T == null){
+            return 0;
+        }
+        Tree LeftTree = T.l;
+        Tree RightTree = T.r;
+        int finalvalue = 0;
+        if(T.x >= value){
+            finalvalue++;
+        }
+        if(LeftTree != null && LeftTree.x >= value){
+            finalvalue++;
+        }
+        if(RightTree != null && RightTree.x >= value){
+            finalvalue++;
+        }
+        if(LeftTree != null && RightTree != null && LeftTree.x > value && RightTree.x > value){
+            return finalvalue;
+        }
+        
+        Tree leftleft;
+        try{
+        leftleft = LeftTree.l;
+        }catch(Exception e){leftleft = null;}
+    
+        if(leftleft != null){
+            finalvalue += solutionworker(LeftTree.l);
+        }
+        Tree leftright;
+        try{
+            leftright = LeftTree.r;
+        }catch(Exception e){leftright = null;}
+        if(leftright != null){
+            finalvalue += solutionworker(LeftTree.r);
+        }
+        Tree rightleft;
+        try{
+            rightleft = RightTree.l;
+        }catch(Exception e){rightleft = null;}
+        if(rightleft != null){
+            finalvalue += solutionworker(RightTree.l);
+        }
+        Tree rightright;
+        try{
+            rightright = RightTree.r;
+        }catch(Exception e){rightright = null;}
+        if(rightright != null){
+            finalvalue += solutionworker(RightTree.r);
+        }
+        return finalvalue;
+    }
+}
+
+Problem 3:
+// you can also use imports, for example:
+// import java.math.*;
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 7
+        //Make an integer array that's the same size as A, that tracks number of jumps
+        //Use a while loop to go through the jumps, tracking number of jumps
+        //If it happens upon an element that's not 0 jumps, it's the start of a cycle
+        //Length of a cycle is the jump value of the element minus the jump value of this element + 1
+        
+        int[] jumps = new int[A.length];//Array to check when we were last at the element
+        int counter = 0;                //Variable to measure jump lengths so far
+        int now = 0;                    //Where are we going now?
+        while(counter < A.length+1){    //The +1 is there in case the loop takes the whole array
+            if(jumps[now]!= 0){         //If we've been here before...
+                return counter - jumps[now];    //How long ago? Return that
+            }
+            jumps[now] = counter;       //Set the current counter to the jumps array
+            now = A[now];               //Set a new destination
+            counter++;                  //Add to the counter
+        }
+        return -1;                      //Return an error code if there's no cycle
+    }
+}
+

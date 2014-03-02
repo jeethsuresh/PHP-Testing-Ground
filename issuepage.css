@@ -1,18 +1,29 @@
+@font-face{
+	font-family: CustomFont;
+	src: url(Futura-Medium.woff);
+}
 *{
-	background: #EDEDED;
-	color: blue;
+	background: #32E355;
+	color: black;
+	font-family: CustomFont;
 }
 body{
-	margin: 40px;
-	padding: 20px;
+	color: #000000;
+	font-size: 15px;
+	background-color: #32E355;
+	height: 100%;
 	}
-	head{
+#wrap{
+	width: 1024px;
+	margin: 0 auto;
+}
+head{
 	margin: 2px;
 	padding: 1px;
 	}
 h1{
 	text-align: center;
-	color: green;
+	color: black;
 	}
 #menu{
 	background-color: #000000;
@@ -42,32 +53,66 @@ li
 
 .container{
 	display: inline;
-	width: 900px;
+	width: 950px;
 }	
 
-.spotlight{
-	width: 900px;
-	height: 750px;
-}
-img.spotlight{
-	width: 900px;
-	height: 550px;	
-	display: block;
-	margin: 0 auto;
+.featurenoimage{
+	display: inline; 
+	width: 479px; 
+	height: 310px; 
+	float: left; 
+	overflow: auto; 
+	text-align: center; 
+	size: 25px;
+	margin-top: 10%;
 }
 
 .feature{
-	width: 400px;
-	height: 400px;	
+	display: inline; 
+	width: 479px; 
+	height: 310px; 
+	float: left; 
+	overflow: auto; 
+	text-align: center; 
+	vertical-align: 50%; 
+	padding: 15px;
 }
-img.feature{
-	width: 100px;
-	height: 400px;
-	display: inline;
+
+.imgfeature{
+	width: 200px; 
+	height: 150px;
+	display: block; 
+	margin: 0 auto;
+}
+
+.headerdivider {
+    border-left: 1px solid #38546d;
+    background: #16222c;
+    width: 1px;
+    height: 80px;
+    display: inline;
+    vertical-align: middle;
+    top: 10px;
 }
 
 .single{
-	width: 300px;
-	height: 400px;
-	display: inline;
+	float:left; 
+	overflow: auto; 
+	display: inline; 
+	width: 223px; 
+	height: 270px; 
+	text-align: center; 
+	padding: 15px;
+}
+
+.spotlightimage{
+	width: 500px; 
+	height: 400px; 
+	display: block; 
+	margin: 0 auto;
+}
+
+.spotlight{
+	display: block;
+	text-align: center;
 }

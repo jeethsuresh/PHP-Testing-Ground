@@ -1,19 +1,35 @@
+@font-face{
+	font-family: CustomFont;
+	src: url(Futura-Medium.woff);
+}
+
 *{
-	background: #EDEDED;
-	color: blue;
+	background: #32E355;
+	color: black;
+	font-family: CustomFont;
 }
 body{
 	margin: 40px;
-	padding: 20px;
+	padding: 20px;	
+	color: #000000;
+	font-size: 15px;
+	background-color: #32E355;
+	height: 100%;
 	}
 	head{
 	margin: 2px;
 	padding: 1px;
 	}
+
+#wrap{
+	width: 1024px;
+	margin: 0 auto;
+}
 article{
 	margin: 50px;
 	padding: 25px;
 	margin-bottom: 20px;
+	width: 900px;
 	}
 h1{
 	text-align: center;
@@ -46,3 +62,8 @@ li
 #menu a:hover{color: #DEDEDE;}
 
 .center{text-align: center;}
+
+img{
+	width: 700px;
+	height: 450px;
+}
