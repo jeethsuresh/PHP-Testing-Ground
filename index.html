@@ -1,17 +1,98 @@
 <html>
+<link href="ncss.css" rel="stylesheet" type="text/css" />
 <body>
-<form enctype="multipart/form-data" action="uploadtext.php" method="POST" id="submitform">
-Title: <input type="text" name="title" /><br />
-Image: <input type="file" name="img[]" multiple><br />
-Text: <textarea name="article" form="submitform"></textarea><br />
-Tags: <input type="text" name="tags" /><br />
-Author: <input type="text" name="author"/><br />
-Issue: <input type="text" name="issue"/><br />
-Type: <input type="text" name="articletype"/><br />
-Blurb: <input type="text" name="blurb"/><br />	
-<input type="submit" value="Upload" />
+<script type = "text/javascript">
+function noFundRaisers(){
+alert("We have no fundraisers running right now! Check back again soon!");
+}
+</script>
 
-Media/Embed Code: <textarea name="embed" form="submitform"></textarea><br />
-</form>
-</body>
-</html>
+<div id="cssmenu">
+<ul>
+   	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/index.html" style="font-size: 38px">The Green Observer</a>
+	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/phpsystem/getissue.php?q=201304">Current Issue</a>
+	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/pastissues.html">Past Issues</a>
+	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/socialmedia.html">Social Media</a>
+	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/calendar.html">Calendar</a>
+	<li class="active"><a href="http://thatkidfrommars.x10.mx/php/gostaff.html">About Us</a>
+	<li class="active"><a href="javascript:noFundRaisers();">Donate!</a>
+</ul>
+</div>
+
+<script>
+	window.focusedimg='img1';
+	var title1="Autumn Berry Inspired";
+	var title2="Next Steps for Beyond Coal";
+	var title3="Eco-Art Addresses Littering";
+	var desc1="A local business creates a revolutionary food from invasive plants. See how Autumn Berry Inspired is changing agricultural perspectives here!";
+	var desc2="UIUC's Beyond Coal activism group talks about how they've made progress with the University's energy policies and what is still left to do. Read more of the interview with Co-President Peter Whitney as he sheds light on the group's tactics.";
+	var desc3="Artwork fills the streets of Champaign-Urbana as The University of Illinois Stormwater Management Program takes creative measures to enhance awareness about stormwater pollution. To find out more about this unique initiative, read the online exclusive article here!";
+	function focusId(var1, var2, var3){
+	var element = document.getElementById(var1);
+	element.style.opacity = "1";
+	element.style.filter = 'alpha(opacity=100)';
+	element = document.getElementById(var2);
+	element.style.opacity = "0";
+	element = document.getElementById(var3);
+	element.style.opacity = "0";
+	window.focusedimg=var1;
+	if(var1==='img1'){
+		document.getElementById("focusedtitle").textContent = title1;
+		document.getElementById("focuseddesc").textContent = desc1;
+		}
+	else if(var1==='img2'){
+		document.getElementById("focusedtitle").textContent = title2;
+		document.getElementById("focuseddesc").textContent = desc2;
+		}
+	else{
+		document.getElementById("focusedtitle").textContent = title3;
+		document.getElementById("focuseddesc").textContent = desc3;
+		}
+	}
+</script>
+<script>
+	var address1="http://greenobservermagazine.com/ArticlesAndImages/fall2013/AutumnBerryInspired.html";
+	var address2="http://greenobservermagazine.com/ArticlesAndImages/fall2013/nextstepsforbeyondcoal.html";
+	var address3="http://greenobservermagazine.com/ArticlesAndImages/fall2013/EcoArtAddressesLittering.html";
+	function linkclicked(){
+		if(window.focusedimg==='img1'){
+			window.location.assign(address1);
+		}
+		else if(window.focusedimg==='img2'){
+				window.location.assign(address2);
+				}
+		else if(window.focusedimg==='img3'){
+			window.location.assign(address3);
+		}
+	}
+</script>
+<div id="wrap">
+<div class="gallery" style="text-align: center;">
+	<div class="focused">
+		<a href="javascript:linkclicked();"><img id="img1" src="images/autumnberryinspired.JPG" height="450" width="600" style="opacity:1"/></a>
+		<a href="javascript:linkclicked();"><img id="img2" src="images/beyond coal 2.jpg"height="450" width="600" /></a>
+		<a href="javascript:linkclicked();"><img id="img3" src="images/greenmuralpick1.jpg"height="450" width="600" /></a>
+		<div class="gallerydesc">
+			<h1 id="focusedtitle">Autumn Berry Inspired</h1>
+			<p>&nbsp;</p>
+			<p id="focuseddesc">A local business creates a revolutionary food from invasive plants. See how Autumn Berry Inspired is changing agricultural perspectives here!</p>
+		</div>
+	</div>
+	<ul>
+		<li><a href="javascript:focusId('img1', 'img2', 'img3');">Autumn Berry Inspired</a></li>
+		<li>|</li>
+		<li><a href="javascript:focusId('img2', 'img1', 'img3');">Next Steps for Beyond Coal</a></li>
+		<li>|</li>
+		<li><a href="javascript:focusId('img3', 'img1', 'img2');">Eco Art Addresses Littering</a></li>
+</div>
+
+<div id="hotlinks">
+	<a href="gostaff.html"><img src="images/about.jpg"></img></a>
+	<a href="http://greenobservermagazine.blogspot.com/"><img src="images/blog.jpg"></img></a>
+	<a href="calendar.html"><img src="images/calendar.jpg"></img></a>
+	<a href="phpsystem/getissue.php?q=201304"><img src="images/current issue.jpg"></img></a>
+	<a href="javascript:noFundRaisers();"><img src="images/donateicon.jpg"></img></a>
+	<a href="pastissues.html"><img src="images/past issues.jpg"></img></a>
+	<a href="socialmedia.html"><img src="images/socialmediaicon.jpg"></img></a>
+	<a href="news.html"><img src="images/news.jpg"></img></a>
+</div>
