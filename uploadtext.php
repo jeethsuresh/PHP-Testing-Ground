@@ -15,7 +15,7 @@ for($i = 0; $i < count($_FILES['img']['name']); $i++){
 	
 	if($tmpfilepath != "" && ((strcasecmp(substr($_FILES['img']['name'][$i], -4), ".jpg") == 0) 
 							|| (strcasecmp(substr($_FILES['img']['name'][$i], -4), ".gif") == 0) 
-							|| (strcasecmp(substr($_FILES['img']['name'][$i], -4), ".jpg") == 0))){
+							|| (strcasecmp(substr($_FILES['img']['name'][$i], -4), ".png") == 0))){
 		$newfilepath = "uploads/" . uniqid() . substr(md5(rand()), 0, 10) . substr($_FILES['img']['name'][$i], strrpos($_FILES['img']['name'][$i], "."));
 		if(move_uploaded_file($tmpfilepath, $newfilepath)){
 			echo "Uploaded ". $tmpfilepath . " to " . $newfilepath; 

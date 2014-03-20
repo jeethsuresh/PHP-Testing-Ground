@@ -2,39 +2,20 @@
 	font-family: CustomFont;
 	src: url(Futura-Medium.woff);
 }
-
 *{
 	background: #EDFAF1;
 	color: black;
 	font-family: CustomFont;
-  line-height: 0 auto;
 }
-
+body{
+	color: #000000;
+	font-size: 15px;
+	background-color: #EDFAF1;
+	height: 100%;
+	}
 #wrap{
 	width: 1024px;
 	margin: 0 auto;
-}
-
-#container{
-	display: inline;
-	width: 950px;
-	background-color: #EDFAF1;
-}
-
-#person{
-	display: inline; 
-	width: 300px; 
-	height: 600px; 
-	float: left; 
-	overflow: auto; 
-	text-align: center; 
-	vertical-align: 50%; 
-	padding: 15px;
-}
-
-.profilepic{
-	width: 200px;
-	height:240px;
 }
 
 #cssmenu,
@@ -100,4 +81,33 @@
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
+}
+
+#profile{
+	width:1024px;
+	height:450px;
+}
+#profilepic{
+	height:400px;
+	padding:20px;
+	width:300px;
+	display:inline;
+}
+#details{
+	display:inline;
+	text-align: center;
+	width:650px;
+	float:left;
+	padding:10px;
+}
+#spotlight{
+	height:400px;
+	display:block;
+}
+.spotlightimage{
+	display:inline;
+	float:left;
+	width: 300px;
+	height:200px;
+	padding:20px;
 }

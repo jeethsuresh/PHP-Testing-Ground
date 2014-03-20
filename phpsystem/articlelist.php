@@ -10,11 +10,15 @@ if (!$con){
   }
 mysql_select_db("mysqltest") or die("no db");
 
-$result = mysql_query("SELECT * FROM titles WHERE Issue='".mysql_real_escape_string($q)."'");
+$q = str_replace("_", " ", $q);
+
+$result = mysql_query("SELECT * FROM titles WHERE Author='".mysql_real_escape_string($q)."'");
 
 $row_list = array();
+$rowcounter = 0;
 while($this_row = mysql_fetch_array($result)){
-	$row_list[$this_row['TableOrg']-1] = $this_row;
+	$row_list[$rowcounter] = $this_row;
+	$rowcounter = $rowcounter + 1;
 }
 echo "<link href='issuepage.css' rel='stylesheet' type='text/css' />";
 echo '<script>
@@ -61,7 +65,7 @@ for($i = 0; $i < count($row_list); $i++){
 		echo "
 		<div class='feature'>
 			<img class='imgfeature' src={$imgstring}></img>
-			<a href={$linkto}><h3>{$row_list[$i]['Title']}</h3></a>
+			<a href={$linkto}><h1>{$row_list[$i]['Title']}</h1></a>
 			<p>{$row_list[$i]['Blurb']}</p>
 		</div>";
 		$count = $count + 2;

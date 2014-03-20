@@ -63,7 +63,7 @@ li
 
 img{
 	width: 700px;
-	height: 450px;
+	height: auto;
 }
 
 
@@ -132,6 +132,20 @@ img{
   border-radius: 4px 0 0 4px;
 }
 
+#authorpic{
+	height:48px;
+	width:40px;
+	display:inline;
+	float:left;
+	padding-bottom:10px;
+}
+#authorname{
+	display:inline;
+	float:left;
+	width:850px;
+	font-size:19px;
+	padding-bottom:10px;
+}
 
 #wrap{
 	width: 1024px;
