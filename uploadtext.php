@@ -1,10 +1,12 @@
 <?php
 
-$con = mysql_connect("localhost","thatkidf_user","password");
+$q = $_GET['q'];
+$pass = $_POST['pass'];
+$con = mysql_connect('caitga.ipagemysql.com', 'mysqluser', '$pass'); 
 if (!$con){
   die('Could not connect: ' . mysql_error());
   }
-mysql_select_db("thatkidf_mysqltest") or die("no db");
+mysql_select_db("mysqltest") or die("no db");
 
 $articlesubmit = str_replace("'", "''", $_POST[article]);
 
